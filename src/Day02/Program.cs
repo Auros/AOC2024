@@ -5,15 +5,12 @@ foreach (var line in File.ReadAllLines("Input.txt"))
 {
     var samples = line.Split(" ").Select(int.Parse).ToArray();
     var result = IsSafe(samples, true);
-    switch (result)
-    {
-        case SafetyReport.Safe:
-            safeReports++;
-            break;
-        case SafetyReport.Tolerant:
-            tolerantReports++;
-            break;
-    }
+
+    // ReSharper disable once ConvertIfStatementToSwitchStatement
+    if (result is SafetyReport.Safe)
+        safeReports++;
+    else if (result is SafetyReport.Tolerant)
+        tolerantReports++;
 }
 
 Console.WriteLine($"Part 1: {safeReports}");
@@ -25,8 +22,11 @@ unsafe SafetyReport IsSafe(Span<int> data, bool recursive = false)
 {
     // If the first two numbers are the same, just drop the first number (doesn't make a difference)
     if (data[0] == data[1])
+    {
+        // ReSharper disable once TailRecursiveCall
         return recursive ? IsSafe(data[1..]) : SafetyReport.Unsafe;
-
+    }
+    
     Directionality? directionality = null;
     for (var i = 0; i < data.Length - 1; i++)
     {

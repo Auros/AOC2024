@@ -17,6 +17,29 @@ int total = 0;
 for (int i = 0; i < left.Length; i++)
     total += Math.Abs(left[i] - right[i]);
     
-Console.WriteLine(total);
+Console.WriteLine($"Part 1: {total}");
 
-// I'll do part 2 later
+var cursor = 0;
+var similarityScore = 0;
+
+foreach (var current in left)
+{
+    var count = 0;
+    for (int c = cursor; c < right.Length; c++)
+    {
+        var rightSide = right[c];
+        if (rightSide == current)
+        {
+            count++;
+        }
+        else if (rightSide > current)
+        {
+            // save cursor to make code go faster or something idk
+            cursor = c;
+            break;
+        }
+    }
+    similarityScore += current * count;
+}
+
+Console.WriteLine($"Part 2: {similarityScore}");

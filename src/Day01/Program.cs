@@ -1,5 +1,4 @@
-﻿
-Span<int> left = stackalloc int[1000];
+﻿Span<int> left = stackalloc int[1000];
 Span<int> right = stackalloc int[1000];
 
 var lines = File.ReadAllLines("Input.txt");

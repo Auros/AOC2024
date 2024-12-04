@@ -66,9 +66,10 @@ AMD Ryzen 7 7800X3D, 1 CPU, 16 logical and 8 physical cores
   DefaultJob : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
 
 
-| Method | Mean     | Error    | StdDev   | Median   | Ratio | RatioSD | Allocated | Alloc Ratio |
-|------- |---------:|---------:|---------:|---------:|------:|--------:|----------:|------------:|
-| Auros  | 634.8 us | 12.64 us | 22.13 us | 623.5 us |  1.00 |    0.05 |         - |          NA |
-| Waffle | 126.7 us |  7.63 us | 22.37 us | 121.8 us |  0.20 |    0.04 |         - |          NA |
+| Method    | Mean     | Error    | StdDev   | Median   | Ratio | RatioSD | Allocated | Alloc Ratio |
+|---------- |---------:|---------:|---------:|---------:|------:|--------:|----------:|------------:|
+| Auros     | 637.0 us | 12.67 us | 25.30 us | 624.3 us |  5.56 |    0.72 |         - |          NA |
+| Waffle    | 132.0 us |  8.78 us | 25.89 us | 123.5 us |  1.15 |    0.27 |         - |          NA |
+| Waffle0PR | 116.6 us |  5.34 us | 15.76 us | 111.6 us |  1.02 |    0.19 |         - |          NA |
 ```
 

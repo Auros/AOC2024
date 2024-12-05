@@ -53,12 +53,12 @@ AMD Ryzen 7 7800X3D, 1 CPU, 16 logical and 8 physical cores
   DefaultJob : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
 
 
-| Method         | Mean      | Error     | StdDev    | Ratio | RatioSD | Gen0    | Gen1    | Allocated | Alloc Ratio |
-|--------------- |----------:|----------:|----------:|------:|--------:|--------:|--------:|----------:|------------:|
-| Auros          | 534.67 us | 10.617 us | 20.200 us | 15.53 |    1.45 | 42.9688 | 34.1797 | 2205057 B |          NA |
-| Waffle         | 278.55 us |  5.413 us |  5.316 us |  8.09 |    0.71 | 14.6484 |  6.8359 |  740912 B |          NA |
-| AurosZeroAlloc |  34.66 us |  0.876 us |  2.582 us |  1.01 |    0.11 |       - |       - |         - |          NA |
-| Arimil         | 177.45 us |  3.233 us |  2.700 us |  5.15 |    0.45 | 12.2070 |  6.3477 |  621928 B |          NA |
+| Method         | Mean      | Error     | Median    | Ratio         | Gen0    | Gen1    | Allocated | Alloc Ratio |
+|--------------- |----------:|----------:|----------:|--------------:|--------:|--------:|----------:|------------:|
+| Auros          | 518.50 us | 10.355 us | 518.63 us |      baseline | 42.9688 | 34.1797 | 2205057 B |             |
+| Waffle         | 286.04 us |  3.626 us | 286.30 us |  1.81x faster | 15.6250 |  6.8359 |  740913 B |  2.98x less |
+| AurosZeroAlloc |  29.71 us |  1.527 us |  32.28 us | 17.90x faster |       - |       - |         - |          NA |
+| Arimil         | 179.42 us |  1.687 us | 179.10 us |  2.89x faster | 12.2070 |  6.3477 |  621928 B |  3.55x less |
 ```
 
 ## Day 4

@@ -20,10 +20,11 @@ AMD Ryzen 7 7800X3D, 1 CPU, 16 logical and 8 physical cores
   DefaultJob : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
 
 
-| Method | Mean      | Error    | StdDev   | Ratio | RatioSD | Gen0   | Allocated | Alloc Ratio |
-|------- |----------:|---------:|---------:|------:|--------:|-------:|----------:|------------:|
-| Auros  |  58.89 us | 0.534 us | 0.446 us |  1.00 |    0.01 | 2.0142 | 101.56 KB |        1.00 |
-| Waffle | 490.36 us | 6.345 us | 5.935 us |  8.33 |    0.11 | 3.4180 | 168.09 KB |        1.66 |
+| Method | Mean      | Error    | StdDev   | Ratio | RatioSD | Gen0   | Gen1   | Allocated | Alloc Ratio |
+|------- |----------:|---------:|---------:|------:|--------:|-------:|-------:|----------:|------------:|
+| Auros  |  60.22 us | 0.709 us | 0.592 us |  1.00 |    0.01 | 2.0142 |      - | 101.56 KB |        1.00 |
+| Waffle | 495.52 us | 5.675 us | 6.536 us |  8.23 |    0.13 | 2.9297 |      - | 168.09 KB |        1.66 |
+| Arimil |  95.39 us | 1.890 us | 2.710 us |  1.58 |    0.05 | 4.0283 | 0.4883 | 201.78 KB |        1.99 |
 ```
 
 ## Day 2
@@ -52,11 +53,12 @@ AMD Ryzen 7 7800X3D, 1 CPU, 16 logical and 8 physical cores
   DefaultJob : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
 
 
-| Method         | Mean      | Error    | StdDev   | Median    | Ratio | Gen0    | Gen1    | Allocated | Alloc Ratio |
-|--------------- |----------:|---------:|---------:|----------:|------:|--------:|--------:|----------:|------------:|
-| Auros          | 484.82 us | 9.136 us | 7.133 us | 485.86 us | 15.82 | 42.9688 | 34.1797 | 2205057 B |          NA |
-| Waffle         | 273.83 us | 5.131 us | 4.799 us | 272.77 us |  8.94 | 14.6484 |  6.8359 |  740912 B |          NA |
-| AurosZeroAlloc |  31.15 us | 1.309 us | 3.861 us |  32.96 us |  1.02 |       - |       - |         - |          NA |
+| Method         | Mean      | Error     | StdDev    | Ratio | RatioSD | Gen0    | Gen1    | Allocated | Alloc Ratio |
+|--------------- |----------:|----------:|----------:|------:|--------:|--------:|--------:|----------:|------------:|
+| Auros          | 534.67 us | 10.617 us | 20.200 us | 15.53 |    1.45 | 42.9688 | 34.1797 | 2205057 B |          NA |
+| Waffle         | 278.55 us |  5.413 us |  5.316 us |  8.09 |    0.71 | 14.6484 |  6.8359 |  740912 B |          NA |
+| AurosZeroAlloc |  34.66 us |  0.876 us |  2.582 us |  1.01 |    0.11 |       - |       - |         - |          NA |
+| Arimil         | 177.45 us |  3.233 us |  2.700 us |  5.15 |    0.45 | 12.2070 |  6.3477 |  621928 B |          NA |
 ```
 
 ## Day 4
@@ -69,11 +71,12 @@ AMD Ryzen 7 7800X3D, 1 CPU, 16 logical and 8 physical cores
   DefaultJob : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
 
 
-| Method    | Mean     | Error    | StdDev   | Median   | Ratio | RatioSD | Allocated | Alloc Ratio |
-|---------- |---------:|---------:|---------:|---------:|------:|--------:|----------:|------------:|
-| Auros     | 637.0 us | 12.67 us | 25.30 us | 624.3 us |  5.56 |    0.72 |         - |          NA |
-| Waffle    | 132.0 us |  8.78 us | 25.89 us | 123.5 us |  1.15 |    0.27 |         - |          NA |
-| Waffle0PR | 116.6 us |  5.34 us | 15.76 us | 111.6 us |  1.02 |    0.19 |         - |          NA |
+| Method    | Mean      | Error     | Median    | Ratio        | Allocated | Alloc Ratio |
+|---------- |----------:|----------:|----------:|-------------:|----------:|------------:|
+| Auros     | 637.73 us | 12.666 us | 625.66 us | 6.55x slower |       1 B |          NA |
+| Waffle    |  88.68 us |  7.925 us |  88.47 us | 1.21x faster |         - |          NA |
+| Waffle0PR | 100.76 us |  5.927 us | 100.73 us |     baseline |         - |          NA |
+| Arimil    |  75.27 us |  1.378 us |  75.13 us | 1.34x faster |         - |          NA |
 ```
 
 ## Day 5
@@ -86,11 +89,11 @@ AMD Ryzen 7 7800X3D, 1 CPU, 16 logical and 8 physical cores
   DefaultJob : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
 
 
-| Method | Mean      | Error     | StdDev    | Ratio | RatioSD | Gen0      | Gen1    | Allocated   | Alloc Ratio   |
-|------- |----------:|----------:|----------:|------:|--------:|----------:|--------:|------------:|--------------:|
-| Auros  |  1.916 ms | 0.0383 ms | 0.0728 ms |  1.00 |    0.05 |         - |       - |         2 B |          1.00 |
-| Waffle |  1.740 ms | 0.0339 ms | 0.0558 ms |  0.91 |    0.04 |   17.5781 |  1.9531 |    895729 B |    447,864.50 |
-| Arimil | 34.639 ms | 0.6428 ms | 0.9011 ms | 18.11 |    0.81 | 2571.4286 | 71.4286 | 131478989 B | 65,739,494.50 |
+| Method | Mean      | Error     | Ratio         | Gen0      | Gen1    | Allocated   | Alloc Ratio          |
+|------- |----------:|----------:|--------------:|----------:|--------:|------------:|---------------------:|
+| Auros  |  1.918 ms | 0.0366 ms |      baseline |         - |       - |         1 B |                      |
+| Waffle |  1.710 ms | 0.0214 ms |  1.12x faster |   17.5781 |  1.9531 |    895729 B |     895,729.00x more |
+| Arimil | 33.384 ms | 0.2650 ms | 17.42x slower | 2600.0000 | 66.6667 | 131478966 B | 131,478,966.00x more |
 ```
 
 * [Auros's Solution](github.com/Auros/AOC2024/blob/main/src/Day05/Program.cs)

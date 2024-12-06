@@ -96,7 +96,7 @@ AMD Ryzen 7 7800X3D, 1 CPU, 16 logical and 8 physical cores
 | Arimil | 33.384 ms | 0.2650 ms | 17.42x slower | 2600.0000 | 66.6667 | 131478966 B | 131,478,966.00x more |
 ```
 
-* [Auros's Solution](AOC2024/blob/main/src/Day05/Program.cs)
+* [Auros's Solution](AOC2024/src/Day05/Program.cs)
 * [Waffle's Solution](https://github.com/GiantWaffleCode/AoC2024/blob/master/Day05/Program.cs)
 * [Arimil (Renari)'s Solution](https://github.com/Renari/AoC2024/blob/master/5/Program.cs)
 
@@ -116,4 +116,5 @@ StdDev=0.922 ms  RatioSD=
 | Arimil | 564.68 ms | 12.159 ms | 25.37x slower | 4000.0000 | 225725368 B | 16,123,240.57x more |
 ```
 
-* [Auros's Solution](AOC2024/blob/main/src/Day06/Program.cs)
+* [Auros's Solution](AOC2024/src/Day06/Program.cs)
+* [Arimil (Renari)'s Solution](https://github.com/Renari/AoC2024/blob/master/6/Program.cs)

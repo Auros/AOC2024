@@ -21,7 +21,7 @@ for (int y = 0; y < height; y++)
         {
             '.' => Cell.Empty,
             '#' => Cell.Obstacle,
-            '^' or '>' or '<' or 'v' => SetGuardIndex(new Position(x, y, width), out guardPosition),
+            '^' or '>' or '<' or 'v' => SetGuardIndex(new Position(x, y, y * width + x), out guardPosition),
             _ => throw new ArgumentOutOfRangeException()
         };
     }
@@ -106,7 +106,9 @@ static bool GetNextCell(Position guardPos, Direction guardDir, int width, int he
     };
     
     // Out of bounds detection.
-    Position newPos = new(guardPos.X + xAdditive, guardPos.Y + yAdditive, width);
+    var newX = guardPos.X + xAdditive;
+    var newY = guardPos.Y + yAdditive;
+    Position newPos = new(newX, newY, newY * width + newX);
     if (newPos.X < 0 || newPos.Y < 0 || newPos.X >= width || newPos.Y >= height)
     {
         // out of bounds
@@ -160,7 +162,6 @@ internal enum Direction : byte
     Left = 3
 }
 
-internal readonly record struct Position(int X, int Y, int Width)
+internal readonly record struct Position(int X, int Y, int Index)
 {
-    public int Index => Y * Width + X;
 }

@@ -110,10 +110,10 @@ AMD Ryzen 7 7800X3D, 1 CPU, 16 logical and 8 physical cores
 
 StdDev=0.922 ms  RatioSD=
 
-| Method | Mean      | Error     | Ratio         | Gen0      | Allocated   | Alloc Ratio         |
-|------- |----------:|----------:|--------------:|----------:|------------:|--------------------:|
-| Auros  |  22.28 ms |  0.442 ms |      baseline |         - |        14 B |                     |
-| Arimil | 564.68 ms | 12.159 ms | 25.37x slower | 4000.0000 | 225725368 B | 16,123,240.57x more |
+| Method | Mean      | Error     | Median    | Ratio         | Gen0      | Allocated   | Alloc Ratio        |
+|------- |----------:|----------:|----------:|--------------:|----------:|------------:|-------------------:|
+| Auros  |  20.52 ms |  0.407 ms |  20.64 ms |      baseline |         - |        23 B |                    |
+| Arimil | 607.52 ms | 18.591 ms | 590.92 ms | 29.64x slower | 4000.0000 | 225725032 B | 9,814,131.83x more |
 ```
 
 * [Auros's Solution](src/Day06/Program.cs)

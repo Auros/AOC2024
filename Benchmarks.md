@@ -99,3 +99,20 @@ AMD Ryzen 7 7800X3D, 1 CPU, 16 logical and 8 physical cores
 * [Auros's Solution](github.com/Auros/AOC2024/blob/main/src/Day05/Program.cs)
 * [Waffle's Solution](https://github.com/GiantWaffleCode/AoC2024/blob/master/Day05/Program.cs)
 * [Arimil (Renari)'s Solution](https://github.com/Renari/AoC2024/blob/master/5/Program.cs)
+
+## Day 6
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.22631.4460/23H2/2023Update/SunValley3)
+AMD Ryzen 7 7800X3D, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.100
+  [Host]     : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+  DefaultJob : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+
+StdDev=0.922 ms  RatioSD=
+
+| Method | Mean     | Error    | Ratio    | Allocated | Alloc Ratio |
+|------- |---------:|---------:|---------:|----------:|------------:|
+| Auros  | 22.18 ms | 0.391 ms | baseline |      14 B |             |
+```
+
+* [Auros's Solution](github.com/Auros/AOC2024/blob/main/src/Day06/Program.cs)

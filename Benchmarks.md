@@ -108,8 +108,6 @@ AMD Ryzen 7 7800X3D, 1 CPU, 16 logical and 8 physical cores
   [Host]     : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
   DefaultJob : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
 
-StdDev=0.922 ms  RatioSD=
-
 | Method | Mean      | Error     | Median    | Ratio         | Gen0      | Allocated   | Alloc Ratio        |
 |------- |----------:|----------:|----------:|--------------:|----------:|------------:|-------------------:|
 | Auros  |  20.52 ms |  0.407 ms |  20.64 ms |      baseline |         - |        23 B |                    |
@@ -118,3 +116,21 @@ StdDev=0.922 ms  RatioSD=
 
 * [Auros's Solution](src/Day06/Program.cs)
 * [Arimil (Renari)'s Solution](https://github.com/Renari/AoC2024/blob/master/6/Program.cs)
+
+## Day 7
+```
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.22631.4460/23H2/2023Update/SunValley3)
+AMD Ryzen 7 7800X3D, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.100
+  [Host]     : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+  DefaultJob : .NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+
+
+| Method | Mean        | Error     | Ratio         | Gen0        | Gen1       | Gen2       | Allocated    | Alloc Ratio            |
+|------- |------------:|----------:|--------------:|------------:|-----------:|-----------:|-------------:|-----------------------:|
+| Auros  |    22.19 ms |  0.442 ms |      baseline |           - |          - |          - |          2 B |                        |
+| Arimil | 2,215.40 ms | 36.779 ms | 99.90x slower | 156000.0000 | 34000.0000 | 33000.0000 | 6638395744 B | 3,319,197,872.00x more |
+```
+
+* [Auros's Solution](src/Day07/Program.cs)
+* [Arimil (Renari)'s Solution](https://github.com/Renari/AoC2024/blob/master/7/Program.cs)
